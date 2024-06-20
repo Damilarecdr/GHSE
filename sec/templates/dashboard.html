@@ -1,0 +1,13 @@
+<!-- students/templates/students/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}</h1>
+    <p>Your Student ID is: {{ user.student_id }}</p>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

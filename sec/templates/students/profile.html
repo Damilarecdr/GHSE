@@ -1,0 +1,13 @@
+<h2>Profile</h2>
+<form method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>User Information</legend>
+        {{ u_form.as_p }}
+    </fieldset>
+    <fieldset>
+        <legend>Profile Information</legend>
+        {{ p_form.as_p }}
+    </fieldset>
+    <button type="submit">Update Profile</button>
+</form>

@@ -1,0 +1,12 @@
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="unique_id">Unique ID:</label>
+    <input type="text" name="unique_id" required>
+    <label for="surname">Surname:</label>
+    <input type="password" name="surname" required>
+    <button type="submit">Login</button>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+</form>

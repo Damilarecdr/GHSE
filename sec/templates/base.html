@@ -1,0 +1,91 @@
+{% load static %}
+
+
+<!-- Scripts -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{school_info.ab}}{% endblock %}</title>
+    <!-- Add your CSS and JavaScript links here -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+   
+
+</head>
+<body>
+    <!-- Top Bar -->
+<div class="top-bar">
+    <div class="contact-info">
+      <span>Email: {{school_info.email}}</span>
+      <span>Phone:{{school_info.phone}}</span>
+    </div>
+  </div>
+  
+  <!-- Main Header -->
+  <header>
+    <img src="{{school_info.logo.url}}" alt="School Logo" class="logo" style="align-items: center;">
+    <div class="menu-icon" onclick="toggleMenu()">
+      &#9776; <!-- Hamburger icon -->
+    </div>
+    <nav id="main-menu" >
+      <a href="#">Home</a>
+      <div class="dropdown">
+        <a href="#">About Us&#9662;</a>
+        <div class="dropdown-content">
+          <a href="#">Vision</a>
+          <a href="#">Mission</a>
+          <a href="#">Meet the founder</a>
+        </div>
+        </div>
+      <div class="dropdown">
+        <a href="#">Academics&#9662;</a>
+        <div class="dropdown-content">
+          <a href="#">Nur/Pry</a>
+          <a href="#">Secondary</a>
+        </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Admissions &#9662;</a>
+            <div class="dropdown-content">
+              <a href="#">Apply for ad</a>
+              <a href="#">Tuition</a>
+              <a href="#">Scholarships</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#">Portal &#9662;</a>
+            <div class="dropdown-content">
+              <a href="#">Staff</a>
+              <a href="#">Student</a>
+              <a href="#">Parent</a>
+            </div>
+          </div>
+      <a href="#">News</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+    {% block content %}
+    <!-- Default content if not overridden by child templates -->
+    {% endblock %}
+      <!-- Footer -->
+  <!-- Footer -->
+  <footer>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <img src="{{school_info.f_logo.url}}" alt="School Logo" style="height: 50px;">
+      <p>&copy; 2024 {{school_info.school_name}}. All rights reserved.</p>
+      <p>{{school_info.email}}| {{school_info.phone}}</p>
+      <p>Working Hours: {{school_info.Working_hours}}</p>
+      <p>Privacy Policy | Terms of Use</p>
+    </div>
+  </footer>
+</body>
+
+<script src="{% static 'js/1.js' %}"></script>
+<script src="{% static 'js/2.js' %}"></script>
+
+<!-- Other content of your website would go here -->
+
+
+</html>

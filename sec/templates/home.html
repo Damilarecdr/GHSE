@@ -1,0 +1,75 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Slider -->
+<div class="slider" id="slider">
+    {% for s in slides %}
+  <div>
+    <img src="{{s.image.url}}" alt="Campus View" class="active">
+    <div class="caption">{{s.caption}}</div>
+  </div>
+{% endfor %}
+</div>
+
+<!--div class="sliding-text">
+    <a href=""><h style="color: black;">Welcome from Our Principal</h></a>
+  </div-->
+
+
+<!-- Welcome Section -->
+<div class="welcome-section">
+  <img src="{{welcome.image.url}}" alt="Principal's Photo"> <!-- Replace with the actual path to the principal's image -->
+  <div class="welcome-text">
+    <h2 style="text-align: center;">{{welcome.title}}</h2>
+    <p style="text-align: left;">{{welcome.message | safe}}</p>
+    <p>{{welcome.signature}},</p>
+    <p><strong>{{welcome.name}}</strong></p>
+    <p>{{welcome.role}}</p>
+  </div>
+</div>
+
+<!-- Why Choose Us Section -->
+<div class="why-choose-us">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Experienced and dedicated faculty</li>
+      <li>Comprehensive curriculum</li>
+      <li>State-of-the-art facilities</li>
+      <li>Focus on holistic development</li>
+      <li>Strong community support</li>
+    </ul>
+  </div>
+  
+  <!-- Meet Our Top Teachers Section -->
+  <div class="top-teachers">
+    <h2>Meet Our Top Teachers</h2>
+    <div class="teachers-grid">
+      {% for t in teacher %}
+      <div class="teacher-card">
+        <img src="{{t.image.url}}" alt="Teacher 3" class="popup-img">
+        <b><p>{{t.full_name}}</p></b>
+        <p>{{t.role}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <!-- Contact Us Section -->
+  <div class="contact-us">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  
+
+  
+{% endblock %}
+
+

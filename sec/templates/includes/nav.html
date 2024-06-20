@@ -1,0 +1,30 @@
+{% load static %}
+
+<div class="top-bar">
+        <div class="contact-info">
+          <span>Email: info@schoolname.edu</span>
+          <span>Phone: (123) 456-7890</span>
+        </div>
+      </div><br>
+<header style="background-color: white">
+        <img src="{% static 'img/logo.png' %}" alt="School Logo" class="logo">
+        <div class="menu-icon" onclick="toggleMenu()">
+          &#9776; <!-- Hamburger icon -->
+        </div>
+        <nav id="main-menu" style="color: black;">
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <div class="dropdown">
+            <a href="#">Admissions &#9662;</a>
+            <div class="dropdown-content">
+              <a href="#">Apply</a>
+              <a href="#">Tuition</a>
+              <a href="#">Scholarships</a>
+            </div>
+          </div>
+          <a href="#">Academics</a>
+          <a href="#">News</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+      
